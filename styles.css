@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(30, 30, 30);
+  display: grid;
+  place-items: center;
+}
+form{
+  width: min(18rem,95%);
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+}
+form :is(.email-label){
+ color: rgb(255, 255, 255);
+ font-weight: 600;
+ font-size: 1.2rem;
+}
+.input{
+  padding: 0.5rem 0.4rem;
+  border: none;
+  outline: 2px solid rgb(134, 134, 134);
+  background-color: rgb(70, 70, 70);
+  font-size: 1.2rem;
+  color: white;
+}
+.pass{
+  margin-top: 1rem;
+}
+.p{
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.submit{
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  width: 100%;
+  background-color: rgb(175, 12, 251);
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+.input:focus{ 
+  border: 2px solid yellow;
+  outline-offset: 2px;
+  outline: 2.5px solid rgb(252, 189, 0);
+  border-radius: 5px;
+}
+form:has(.submit:focus) .input:invalid{
+  border: 1px solid red;
+  outline: 1px solid red;
+  animation: shake 0.2s linear 2;
+  position: relative;
+}
+@keyframes shake {
+  0%{
+    right: 0;
+  }
+  25%{
+    right: 15px;
+  }
+  50%{
+    right: 10px;
+  }
+  75%{
+    right: 5px;
+  }
+  100%{
+    right: 0;
+  }
+}
